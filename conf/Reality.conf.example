@@ -1,0 +1,140 @@
+# MxoEmu (Reality) Configuration File
+# Rename to Reality.conf for use with the emulator
+
+###############################################################################
+# DATABASE SETTINGS
+###############################################################################
+
+# MySQL Database Connection
+Database.Hostname = "localhost"
+Database.Name = "mxoemu"
+Database.Username = "mxouser"
+Database.Password = "password"
+Database.Port = 3306
+Database.ConnectionCount = 5
+
+###############################################################################
+# SERVER SETTINGS
+###############################################################################
+
+# Server Identification
+Server.Name = "MxoEmu Reality Server"
+Server.Motd = "Welcome to The Matrix Online!"
+Server.DebugLevel = 3  # 0=None, 1=Error, 2=Warning, 3=Info, 4=Debug
+
+# Network Settings
+Auth.ListenAddress = "0.0.0.0"
+Auth.ListenPort = 10001
+Game.ListenAddress = "0.0.0.0"
+Game.ListenPort = 10002
+Margin.ListenAddress = "0.0.0.0"
+Margin.ListenPort = 10003
+Console.ListenAddress = "127.0.0.1"
+Console.ListenPort = 10004
+
+# Connection Limits
+Auth.MaxConnections = 1000
+Game.MaxConnections = 1000
+Margin.MaxConnections = 1000
+
+# Connection Timeouts (in milliseconds)
+Auth.ConnectionTimeout = 30000
+Game.ConnectionTimeout = 30000
+Margin.ConnectionTimeout = 30000
+Game.PingInterval = 5000
+
+###############################################################################
+# WORLD SETTINGS
+###############################################################################
+
+# Default World
+World.Name = "Matrix"
+World.MaxPlayers = 500
+World.StartDistrict = 1  # See DistrictIds enum
+World.StartX = 0.0
+World.StartY = 0.0
+World.StartZ = 0.0
+World.StartRotation = 0.0
+
+# Game Mechanics
+Game.ExperienceRate = 1.0
+Game.InformationRate = 1.0
+Game.MaxLevel = 50
+Game.MaxProfessionLevel = 50
+Game.HealthRegen = 0.1  # Per second
+Game.InnerStrengthRegen = 0.05  # Per second
+Game.PvpEnabled = 0
+Game.AllowCrossFactionsChat = 1
+
+###############################################################################
+# SECURITY SETTINGS
+###############################################################################
+
+# Encryption Keys
+Security.RSAKeyBits = 1024
+Security.GenerateKeysOnStartup = 0
+Security.RSAPrivateKeyFile = "keys/private.pem"
+Security.RSAPublicKeyFile = "keys/public.pem"
+Security.RSASignPrivateKeyFile = "keys/sign_private.pem"
+Security.RSASignPublicKeyFile = "keys/sign_public.pem"
+
+# Account Security
+Security.MinPasswordLength = 8
+Security.PasswordComplexity = 1  # 0=None, 1=Basic, 2=Strong
+Security.MaxLoginAttempts = 5
+Security.LoginLockoutTime = 300  # Seconds
+Security.AccountSuspensionTime = 86400  # Seconds
+
+###############################################################################
+# PERFORMANCE SETTINGS
+###############################################################################
+
+# Thread Configuration
+Performance.AuthThreads = 2
+Performance.GameThreads = 4
+Performance.MarginThreads = 2
+Performance.DatabaseThreads = 2
+
+# Memory Limits
+Performance.MaxAuthMemory = 128  # MB
+Performance.MaxGameMemory = 512  # MB
+Performance.MaxMarginMemory = 128  # MB
+
+# Query Caching
+Performance.QueryCacheSize = 1000
+Performance.QueryCacheTime = 60  # Seconds
+
+###############################################################################
+# LOGGING SETTINGS
+###############################################################################
+
+# Log Files
+Log.Directory = "logs"
+Log.GeneralFile = "reality.log"
+Log.ErrorFile = "error.log"
+Log.GMCommandsFile = "gm.log"
+Log.ChatFile = "chat.log"
+Log.MaxFileSize = 102400  # KB
+Log.FileCount = 10
+
+# Log Levels
+Log.GeneralLevel = 3  # 0=None, 1=Error, 2=Warning, 3=Info, 4=Debug
+Log.ConsoleLevel = 3
+Log.GMCommandsLevel = 1
+Log.ChatLevel = 2
+
+###############################################################################
+# DEVELOPER SETTINGS
+###############################################################################
+
+# Development Modes
+Developer.Mode = 0
+Developer.RemoteConsole = 0
+Developer.Profiling = 0
+Developer.MemoryTracking = 0
+Developer.ScriptingEnabled = 0
+Developer.CommandDebug = 0
+
+# Script Settings
+Scripts.Directory = "scripts"
+Scripts.AutoReload = 0
